@@ -1,0 +1,29 @@
+{% extends "Laboratorio/base_site.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<form enctype="multipart/form-data" action="" method="POST" style="text-align:center; margin-left: 17%;  ">
+    
+    
+    {% csrf_token %}
+
+<table style="color:black; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> 
+
+    {{ form_histo.as_table }}  
+
+</table> 
+<input type= "submit" value="Realizar Registro" style="width:150px ; margin-left: 40%;" >
+
+
+
+</form>
+
+
+</div>
+
+{{request.POST}}
+
+{% endblock %}

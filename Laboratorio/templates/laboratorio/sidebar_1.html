@@ -1,0 +1,66 @@
+<div class="left_col scroll-view">
+  <div class="profile clearfix">
+
+    <div class="profile_pic">
+      <img src="/static/images/logo_cisco.png" alt="..." class="img-circle profile_img"> 
+      
+    </div>
+    <div class="profile_info">
+      <h3 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: whitesmoke; vertical-align:text-top;"> CISCO ALEYA </h3>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+
+  <!-- menu profile quick info -->
+  <div class="profile clearfix">
+    <div class="profile_pic">
+      <img src="/static/images/robot.png" alt="..." class="img-circle profile_img">
+    </div>
+    <div class="profile_info">
+      <span>Welcome,</span>
+      <h2> Lab Engineer </h2>
+    </div>
+  </div>
+  <!-- /menu profile quick info -->
+
+  <br />
+
+  <!-- sidebar menu -->
+  <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+    <div class="menu_section">
+      <h3>General</h3>
+      <ul class="nav side-menu">
+        <li><a><i class="fa fa-home"></i> Laboratorio <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a href="{% url 'Laboratorio'  %}">PERU</a></li>
+            <li><a href="{% url 'Laboratorio_CR'  %}">COSTA RICA</a></li>
+          </ul>
+        </li>
+        <li><a><i class="fa fa-edit"></i> Prestamos <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a href="{% url 'Prestamos'  %}"> PERU </a></li>
+            <li><a href="{% url 'Prestamos_CR'  %}"> COSTA RICA</a></li>
+          </ul>
+        </li>
+        <li><a><i class="fa fa-desktop"></i> Historial <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a href="{% url 'Historial'  %}">PERU</a></li>
+            <li><a href="{% url 'Historial_CR'  %}">COSTA RICA</a></li>
+          </ul>
+        </li>
+        <li><a><i class="fa fa-table"></i> Contacto <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a href="tables.html">Tables</a></li>
+            <li><a href="tables_dynamic.html">Table Dynamic</a></li>
+          </ul>
+        </li>
+        
+        
+      </ul>
+    </div>
+    
+  </div>
+  <!-- /sidebar menu -->
+
+  <!-- /menu footer buttons -->
+</div>

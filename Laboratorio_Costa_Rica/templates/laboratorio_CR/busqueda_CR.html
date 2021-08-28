@@ -1,0 +1,68 @@
+{% extends "Laboratorio/base_site.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<form class="d-flex" method="POST" action = "{% url 'Busqueda_CR' %}">
+
+    {% csrf_token %}
+  
+  <input style="margin-left: 85%;" class="form-contro me-2 ml-4" type="search" placeholder="Search" aria-label="Search" name="busqueda">
+  <button  style="text-align: center;" type="submit">Search</button>
+  </form>
+
+    {% if busqueda %}
+        <h1 style="color: white; margin-left: 17%;"> Se realizo la busqueda de "{{ busqueda }}"</h1>
+
+        <br/>
+
+        <table style="margin-left: 10%; margin-top: 2%; width: 1200px ;" class="table ex1 table-dark table-striped table-hover table-sm" >
+          <thead>
+            <tr>
+              <th scope="col" style="color: whitesmoke; text-align: center ;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 150%;">Identificador</th>
+              <th scope="col" style="color: whitesmoke; text-align: center;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 150%;">Serial Number</th>
+              <th scope="col" style="color: whitesmoke; text-align: center;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 150%;">Modelo</th>
+              <th scope="col" style="color: whitesmoke; text-align: center;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 150%">Estado</th>
+              <th scope="col" style="color: whitesmoke; text-align: center;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 150%">Ubicacion</th>
+              <th scope="col" style="color: whitesmoke; text-align: center;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 150%">Area</th>
+
+            </tr>
+           </thead>
+
+        {% for item in objeto %}
+
+  
+              <tbody>
+                <tr>
+                  <td style="color: black; font-size: 70%; text-align: center; font-size: 105%; vertical-align: middle;">{{item.identificador}}</td>
+                  <td style="color: black; font-size: 70%; text-align: center; font-size: 105%; vertical-align: middle;">{{item.serial_number}}</td>
+                  <td style="color: black; font-size: 70%; text-align: center; font-size: 105%; vertical-align: middle;;">{{item.modelo}}</td>
+                  <td style="color: black; font-size: 70%; text-align: center; font-size: 105%; vertical-align: middle;;">{{item.estado}}</td>
+                  <td style="color: black; font-size: 70%; text-align: center; font-size: 105%; vertical-align: middle;">{{item.ubicacion}}</td>
+                  <td style="color: black; font-size: 70%; text-align: center; font-size: 105%; vertical-align: middle;">{{item.area}}</td>
+                  <td style="color: black; font-size: 70%; text-align: center; font-size: 105%; vertical-align: middle;">
+                    <a href="{% url 'Pedido' item.id %}" class="btn btn-sm btn-success">Prestar</a>
+                  
+                  </td>
+                </tr>
+                
+                </tbody>
+                {% endfor %}
+        
+          </table>
+
+
+
+
+        
+    {% else %}
+        <h1> No se realizo ninguna busqueda</h1>
+    
+
+    {% endif %}
+
+
+
+
+{% endblock %}

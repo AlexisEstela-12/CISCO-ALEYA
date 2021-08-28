@@ -1,0 +1,32 @@
+{% extends "Laboratorio/base_site.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div>
+
+   
+
+    <form action="" method="POST" style="text-align:center; margin-left: 17%;">
+    
+    
+        {% csrf_token %}
+    
+        <table style="color: black; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"> 
+    
+        {{ form_lab.as_table }}  
+    
+    </table> 
+   <input type= "submit" value="Devolver" style="width:150px ; margin-left: -20%;" >
+   
+    
+
+    </form>
+
+
+</div>
+
+
+
+{% endblock %}

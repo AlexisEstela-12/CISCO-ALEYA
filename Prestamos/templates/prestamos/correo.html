@@ -1,0 +1,52 @@
+
+
+
+
+<html>
+<head>
+    {% load static %}
+    <title>Hola este es un correo de aviso de préstamo de ALEYA , la asistente de prestamos de equipos del laboratorio CISCO PERU  </title>
+</head>
+<body>
+    <div>
+    <h3> Hola este es un correo de aviso de préstamo de ALEYA , la asistente de prestamos de equipos del laboratorio CISCO PERU  </h3>
+</div>
+    <h14>El proceso de préstamo del equipo {{valor.identificador}} con serial number {{valor.serial_number}} con el partner {{partner}} 
+         ha finalizado satisfactoriamente. 
+    </h14>
+    <div>
+    <h14>Recordar las fechas establecidas en el préstamo. A continuación se detalla toda la información correspondiente : </h14>
+    </div>
+    <ul class="list-group">
+    
+
+    <li class="list-group-item"> Identificador     : {{valor.identificador}} </li>
+    <li class="list-group-item"> Seria_number      : {{valor.serial_number}}  </li>
+    <li class="list-group-item"> Modelo            : {{valor.modelo}}        </li>
+    <li class="list-group-item"> Codigo Prestamo   : {{codigo_prestamo}}     </li>
+    <li class="list-group-item"> Encargado Cisco   : {{Account_Manager}}     </li>
+    <li class="list-group-item"> Cliente           : {{cliente}}             </li>
+    <li class="list-group-item"> Partner           : {{partner}}             </li>
+    <li class="list-group-item"> Contacto Partner  : {{contacto}}            </li>
+    <li class="list-group-item"> Correo Partner    : {{correo_contacto}}     </li>
+    <li class="list-group-item"> F. Prestamo       : {{fecha_prestamo}}      </li>
+    <li class="list-group-item"> F. Devolucion     : {{fecha_devolucion}}     </li>
+</ul>
+    <ul class="list-group">
+    <h13>Encargados de prestamo:</h13>
+        <li class="list-group-item"> {{Account_Manager}} ({{Account_Manager.email}})</li>
+        <li class="list-group-item"> Alexis Estela (alestela@cisco.com)</li>
+        <li class="list-group-item"> Julio Mendoza (julimend@cisco.com)</li> 
+        <li class="list-group-item"> Michelle Luna (michluna@cisco.com)</li> 
+
+</ul>
+    <div>
+    <h14> En caso se tenga alguna duda o consulta por favor enviar un correo en respuesta al actual y en copia a los Encargados del prestamo.</h14>
+    <div>
+    <h14> Se adjunta la guia de salida del equipo, por favor firmarla, enviarla en respuesta hacia los encargados mencionados anteriormente </h14>
+    </div>
+</div>
+
+    <img src="https://alln-extcloud-storage.cisco.com/gblogs/sites/40/the-bridge-to-possible.png" width="500" >
+</body>
+</html>

@@ -1,0 +1,65 @@
+{% extends "Laboratorio/base_site.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+<form class="d-flex" method="POST" action = "{% url 'Busqueda_prestamo_CR' %}">
+
+  {% csrf_token %}
+
+
+<input style="margin-left: 85%;" class="form-contro me-2 ml-4 navbarResponsive" type="search" placeholder="Search" aria-label="Search" name="busqueda">
+<button  style="text-align: center;" type="submit">Search</button>
+</form>
+
+<table style="margin-left: 10%; margin-top: 2%; width: 1200px ;" class="table ex1 table-dark table-striped table-hover table-sm" >
+    <thead>
+      <tr>
+        <th scope="col" style="color: white; text-align: center;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 150%;">Identificador</th>
+        <th scope="col" style="color: white; text-align: center;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 150%;">Serial Number</th>
+        <th scope="col" style="color: white; text-align: center;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 150%;">Modelo</th>
+        <th scope="col" style="color: white; text-align: center;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 150%;">Codigo Prestamo</th>
+        <th scope="col" style="color: white; text-align: center;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 150%;">AM</th>
+        <th scope="col" style="color: white; text-align: center;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 150%;">Cliente</th>
+        <th scope="col" style="color: white; text-align: center;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 150%;">Partner</th>
+        <th scope="col" style="color: white; text-align: center;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 150%;">Responsable</th>
+        <th scope="col" style="color: white; text-align: center;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 150%;">Contacto</th>
+        <th scope="col" style="color: white; text-align: center;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 150%;">F.Prestamo</th>
+        <th scope="col" style="color: white; text-align: center;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 150%;">F.Entrega</th>
+
+
+      </tr>
+     </thead>
+      <tbody>
+        {% for equipo in prestamos_aux %}
+        <tr>
+          <td style="color: black; font-size: 70%; text-align: center; font-size: 105%; vertical-align: middle;">{{equipo.identificador}}</td>
+          <td style=" color: black; font-size: 70%; text-align: center; font-size: 105%; vertical-align: middle;">{{equipo.serial_number}}</td>
+          <td style="color: black; font-size: 70%; text-align: center; font-size: 105%; vertical-align: middle;">{{equipo.modelo}}</td>
+          <td style="color: black; font-size: 70%; text-align: center; font-size: 105%; vertical-align: middle;">{{equipo.codigo_prestamo}}</td>
+          <td style="color: black; font-size: 70%; text-align: center; font-size: 105%; vertical-align: middle;">{{equipo.AM}}</td>
+          <td style="color: black; font-size: 70%; text-align: center; font-size: 105%; vertical-align: middle;">{{equipo.cliente}}</td>
+          <td style="color: black; font-size: 70%; text-align: center; font-size: 105%; vertical-align: middle;" >{{equipo.partner}}</td>
+          <td style="color: black; font-size: 70%; text-align: center; font-size: 105%; vertical-align: middle;" >{{equipo.responsable}}</td>
+          <td style="color: black; font-size: 70%; text-align: center; font-size: 105%; vertical-align: middle;">{{equipo.contacto}}</td>
+          <td style="color: black; font-size: 70%; text-align: center; font-size: 105%; vertical-align: middle;">{{equipo.Fprestamo}}</td>
+          <td style="color: black; font-size: 70%; text-align: center; font-size: 105%; vertical-align: middle;">{{equipo.Fentrega}}</td>
+
+          <td style="color: white; font-size: 70%; text-align: center; vertical-align: middle;">
+            <a href="{% url 'Devolver_CR' equipo.id %}" class="btn btn-sm btn-danger">Devolver</a>
+            <td style="color: white; font-size: 70%;">
+          </td>
+          <td style="color: white; font-size: 70%; vertical-align: middle;">
+            <a href="{% url 'Tabla_CR' equipo.id %}" class="btn btn-sm btn-warning">Registrar</a>
+            <td style="color: white; font-size: 70%;">
+          </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+
+  </table>
+
+{% endblock %}
