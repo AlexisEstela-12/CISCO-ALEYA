@@ -40,9 +40,6 @@ INSTALLED_APPS = [
     'Laboratorio',
     'Prestamos',
     'Historial',
-    'Laboratorio_Costa_Rica',
-    'Prestamos_Costa_Rica',
-    'Historial_Costa_Rica',
 ]
 
 MIDDLEWARE = [
@@ -141,11 +138,10 @@ MEDIA_ROOT = BASE_DIR / 'media'
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_USE_TLS=True
 EMAIL_PORT= 587
-EMAIL_HOST_USER='cisco.ALEYA@gmail.com'
-EMAIL_HOST_PASSWORD='Cisco.12345'
+EMAIL_HOST_USER='fortialeya@gmail.com'
+EMAIL_HOST_PASSWORD='xzlm msvh aveh mlxr'
 
 
 MEDIA_URL_DOCU ='/Documento/'
 MEDIA_ROOT_DOCU = BASE_DIR / 'Documento'
 MEDIA_ROOT_SAVE_PERU = BASE_DIR / 'guias_docu/PERU'
-MEDIA_ROOT_SAVE_COSTA_RICA = BASE_DIR / 'guias_docu/COSTA RICA'

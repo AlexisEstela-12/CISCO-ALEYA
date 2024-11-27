@@ -15,7 +15,7 @@ def create_mail(user_mail,template_name,context):
         to= [
             user_mail
         ],
-        cc= ['alestela@cisco.com']
+        cc= ['aestelalozano@gmail.com']
     )
 
     message.attach_alternative(content,'text/html')

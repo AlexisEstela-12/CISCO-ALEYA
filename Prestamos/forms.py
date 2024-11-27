@@ -5,13 +5,7 @@ from django.db.models import query
 from django.forms import ModelForm, fields, models
 from .models import Devices
 
-
-
-
 class Formulario(ModelForm):
-
-
-
     class Meta:
         model = Devices
         # fields = '__all__'

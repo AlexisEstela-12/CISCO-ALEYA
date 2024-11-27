@@ -24,9 +24,6 @@ urlpatterns = [
     path('', include('Laboratorio.urls')),
     path('prestamos/', include('Prestamos.urls')),
     path('historial/', include('Historial.urls')),
-    path('laboratorio_CR/', include('Laboratorio_Costa_Rica.urls')),
-    path('prestamos_CR/', include('Prestamos_Costa_Rica.urls')),
-    path('historial_CR/', include('Historial_Costa_Rica.urls')),
 ]
 
 urlpatterns+= static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

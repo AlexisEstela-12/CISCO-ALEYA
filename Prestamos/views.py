@@ -30,14 +30,14 @@ def create_mail_peru(user_mail,template_name,context,correo):
     template= get_template(template_name)
     content = template.render(context)
     message = EmailMultiAlternatives(
-        subject="Mensaje de aviso de Prestamo de ALEYA para PERU",
+        subject="Mensaje de aviso de Prestamo de FORTI ALEYA para PERU",
 
         body='',
         from_email= settings.EMAIL_HOST_USER,
         to= [
             user_mail
         ],
-        cc= ['alestela@cisco.com','julimend@cisco.com','michluna@cisco.com',correo]
+        cc= ['aestela@fortinet.com','fpadillaferra@fortinet.com','hdavila@fortinet.com','jgonzalesandr@fortinet.com',correo]
     )
 
     message.attach_alternative(content,'text/html')

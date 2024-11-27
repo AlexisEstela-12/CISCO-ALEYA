@@ -1,9 +1,6 @@
 from django.urls import path
 from Prestamos import views
 
-
-
-
 urlpatterns = [
 
     path('', views.funcion_prestar, name= "Prestamos"),
